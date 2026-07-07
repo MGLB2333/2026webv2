@@ -1,0 +1,21 @@
+/* ===== LightBoxTV — contact page ===== */
+/* Form card styles live in form.css (shared with the Cannes page). */
+
+:root{ --wrap:1180px; }
+body{background:var(--paper);}
+
+.contact-hero{padding:150px 0 0;}
+.contact-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:64px;align-items:start;padding-bottom:96px;}
+.contact-intro h1{font-size:clamp(36px,4.6vw,62px);letter-spacing:-.03em;text-transform:uppercase;font-weight:600;}
+.contact-intro p{margin-top:20px;font-size:clamp(17px,1.4vw,20px);color:var(--muted);max-width:42ch;}
+.contact-points{margin-top:38px;display:flex;flex-direction:column;gap:22px;}
+.cpoint{display:flex;gap:16px;align-items:flex-start;}
+.cpoint .ci{width:46px;height:46px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;flex:none;}
+.cpoint .ci svg{width:22px;height:22px;stroke:var(--blue-deep);}
+.cpoint h4{font-size:18px;margin-bottom:3px;}
+.cpoint p{font-size:15px;color:var(--muted);margin:0;}
+.cpoint a{color:var(--blue-deep);font-weight:600;}
+
+@media (max-width:940px){
+  .contact-grid{grid-template-columns:1fr;gap:40px;}
+}

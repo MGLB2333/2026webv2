@@ -1,0 +1,117 @@
+/* ===== LightBoxTV — home page (Website 2.0) ===== */
+
+/* Only the homepage shows the announcement bar, so only here do the nav + page
+   drop 46px to clear it. news.js adds html.news-dismissed to collapse it. */
+:root{ --newsbar-h:46px; }
+
+.display{font-family:var(--disp);font-weight:600;font-size:clamp(36px,5.6vw,84px);line-height:.96;letter-spacing:-.03em;text-transform:uppercase;}
+.h2{font-family:var(--disp);font-weight:600;font-size:clamp(32px,4.4vw,60px);line-height:1;letter-spacing:-.02em;text-transform:uppercase;}
+
+/* ===== SECTION PANELS ===== */
+.stack{position:relative;}
+.panel{position:relative;}
+.panel.dk{background:var(--dark);color:#fff;}
+.panel.cr{background:var(--cream);color:var(--ink);}
+.panel.pp{background:var(--purple);color:#fff;}
+.panel.gr{background:var(--lime);color:var(--dark);}
+.panel.or{background:var(--orange);color:var(--dark);}
+.pad{padding-block:118px;}
+.pad-sm{padding-block:80px;}
+@media (max-width:940px){ .pad{padding-block:78px;} }
+
+/* ===== HERO ===== */
+.hero{background:var(--dark);color:#fff;min-height:78vh;display:flex;align-items:center;text-align:center;padding:172px 0 78px;position:relative;overflow:hidden;}
+.hero-in{width:100%;max-width:1080px;margin:0 auto;}
+.hero h1{margin:0 auto;max-width:16ch;}
+.hero h1 .hl{margin:.12em 0 0;white-space:nowrap;}
+.hero .sub{max-width:56ch;margin:34px auto 0;font-family:var(--body);font-size:clamp(15px,1.2vw,18px);font-weight:500;line-height:1.55;color:rgba(255,255,255,.66);}
+.hero .cta-row{margin-top:36px;display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
+
+/* ===== SHIFT (purple) ===== */
+.callout{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.callout .c .w{font-family:var(--disp);font-weight:600;font-size:clamp(28px,3.2vw,46px);letter-spacing:-.025em;text-transform:uppercase;color:#fff;}
+.callout .c.on .w{color:var(--lime);}
+.callout .c .w .acc{color:var(--lime);}
+.callout .c.on .w .acc{color:#fff;}
+.callout .c p{margin-top:14px;color:rgba(255,255,255,.82);font-size:16px;font-weight:500;max-width:30ch;}
+.callout .c .bar{height:3px;width:54px;background:var(--lime);margin-top:20px;}
+.statement{max-width:20ch;margin-top:80px;color:#fff;}
+.stmt-sub{margin-top:30px;max-width:60ch;font-size:clamp(15px,1.2vw,18px);font-weight:500;line-height:1.55;color:rgba(255,255,255,.88);}
+
+/* ===== PLATFORM (cream) — Plan/Manage/Measure ===== */
+.plat-head{max-width:60ch;}
+.plat-head .h2{margin-top:14px;max-width:18ch;}
+.plat-head p.lead{margin-top:18px;max-width:50ch;}
+.plat-vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:48px;}
+.pvcard{border-top:2px solid var(--dark);padding-top:24px;}
+.pvcard .pv-ico{width:46px;height:46px;border-radius:12px;background:rgba(124,58,237,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.pvcard .pv-ico svg{width:24px;height:24px;stroke:var(--purple);}
+.pvcard h3{font-family:var(--disp);font-weight:600;font-size:22px;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:12px;}
+.pvcard p{color:var(--muted);font-size:16px;line-height:1.55;}
+
+/* ===== OUTCOME (green) ===== */
+.outcome{max-width:1280px;}
+.outcome .eyebrow{color:var(--dark);opacity:.6;}
+.outcome h2{font-family:var(--disp);font-weight:600;font-size:clamp(34px,4.6vw,72px);line-height:.96;letter-spacing:-.025em;text-transform:uppercase;margin-top:14px;}
+.outcome h2 .hl{transform:rotate(-2deg);box-shadow:6px 6px 0 rgba(0,0,0,.28);}
+.outcome p{margin-top:20px;font-size:clamp(15px,1.2vw,18px);font-weight:500;line-height:1.55;max-width:60ch;color:rgba(22,21,27,.78);}
+
+/* ===== MODULES (cream) ===== */
+.mod-head{max-width:60ch;}
+.mod-head .h2{margin-top:14px;max-width:20ch;}
+.mod-head p.lead{margin-top:18px;max-width:54ch;}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px;}
+.mcard{background:var(--cream-card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;display:flex;flex-direction:column;transition:transform .3s, box-shadow .3s;}
+.mcard:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(20,30,60,.1);}
+.mcard .icot{width:54px;height:54px;border-radius:14px;background:var(--dark);display:flex;align-items:center;justify-content:center;margin-bottom:22px;flex:none;}
+.mcard .icot svg{width:26px;height:26px;stroke:var(--lime);}
+.mcard h4{font-family:var(--disp);font-weight:600;font-size:21px;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:9px;}
+.mcard p{color:var(--muted);font-size:15px;line-height:1.5;}
+
+/* ===== BENEFITS (dark) — 6-cell grid ===== */
+.ben-head{max-width:60ch;}
+.ben-head .h2{margin-top:14px;max-width:20ch;color:#fff;}
+.ben-head p.lead{margin-top:18px;max-width:44ch;}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--dline);border:1px solid var(--dline);border-radius:24px;overflow:hidden;margin-top:48px;}
+.bcell{background:var(--dark);padding:38px 34px;}
+.bcell .ic{width:46px;height:46px;border-radius:11px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;margin-bottom:22px;}
+.bcell .ic svg{width:23px;height:23px;stroke:var(--lime);}
+.bcell h4{font-family:var(--disp);font-weight:600;font-size:20px;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:9px;}
+.bcell p{color:rgba(255,255,255,.62);font-size:15.5px;line-height:1.5;}
+
+/* ===== LATEST NEWS (cream) — numbered list ===== */
+.news-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:44px;flex-wrap:wrap;}
+.news-head .h2{margin-top:14px;}
+.news-list{border-bottom:1px solid rgba(22,21,27,.12);}
+.nrow{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 12px;border-top:1px solid rgba(22,21,27,.12);color:var(--ink);transition:color .25s, background .25s, padding .25s;}
+.nrow:hover{color:var(--purple);background:var(--cream-card);padding-left:20px;}
+.nrow .nl{display:flex;align-items:baseline;gap:22px;min-width:0;}
+.nrow .num{font-size:14px;font-weight:700;opacity:.4;font-variant-numeric:tabular-nums;flex:none;}
+.nrow .nt{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2.1vw,32px);line-height:1.1;letter-spacing:-.02em;text-transform:uppercase;}
+.nrow .nr{display:flex;align-items:center;gap:18px;flex:none;}
+.nrow .meta{font-family:var(--disp);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(22,21,27,.42);white-space:nowrap;}
+.nrow .arc{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;border:1px solid rgba(22,21,27,.18);flex:none;}
+
+/* ===== BIG CTA (orange) ===== */
+.bigcta{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(22,21,27,.18);border:1px solid rgba(22,21,27,.18);border-radius:28px;overflow:hidden;}
+.bigcta a{background:var(--orange);padding:44px 36px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;transition:background .25s;}
+.bigcta a:hover{background:var(--orange-d);}
+.bigcta a h3{font-family:var(--disp);font-weight:600;font-size:clamp(22px,2.4vw,36px);line-height:1;letter-spacing:-.025em;text-transform:uppercase;}
+.bigcta a .arc{width:48px;height:48px;border-radius:50%;border:1px solid rgba(22,21,27,.3);display:flex;align-items:center;justify-content:center;flex:none;font-size:18px;}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:880px){
+  .plat-vgrid{grid-template-columns:1fr 1fr;}
+  .mgrid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:760px){
+  .callout,.bgrid{grid-template-columns:1fr;}
+  .statement{margin-top:56px;}
+  .nrow{flex-wrap:wrap;gap:12px;}
+  .nrow .meta{display:none;}
+}
+@media (max-width:560px){
+  .plat-vgrid,.mgrid,.bigcta{grid-template-columns:1fr;}
+  .hero{padding:150px 0 60px;}
+  .hero h1 .hl{white-space:normal;}
+}

@@ -1,0 +1,31 @@
+/* ===== LightBoxTV — form card ===== */
+/* Shared by the Contact and Cannes pages: a bordered form card with fields,
+   submit row and a success state that replaces the fields on submit. */
+
+.form-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:44px;box-shadow:0 24px 60px rgba(20,30,60,.07);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.field{margin-bottom:20px;}
+.field.full{grid-column:1 / -1;}
+.field label{display:block;font-size:14px;font-weight:600;color:#2C313A;margin-bottom:8px;}
+.field label .req{color:var(--blue-deep);}
+.field input,.field select,.field textarea{width:100%;font-family:var(--body);font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;transition:border-color .2s, box-shadow .2s;}
+.field textarea{resize:vertical;min-height:130px;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 4px rgba(124,58,237,.14);}
+.field input::placeholder,.field textarea::placeholder{color:#9AA3AF;}
+.form-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:8px;}
+.form-actions .btn{font-size:16px;padding:15px 30px;}
+.form-actions .btn:disabled{opacity:.6;cursor:default;}
+.form-note{font-size:13px;color:var(--muted);}
+.form-error{margin-top:14px;font-size:14px;font-weight:600;color:#C0362C;}
+.form-success{display:none;text-align:center;padding:30px 10px;}
+.form-success.show{display:block;}
+.form-success .tick{width:64px;height:64px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;}
+.form-success .tick svg{width:30px;height:30px;stroke:#fff;}
+.form-success h3{font-size:26px;margin-bottom:10px;}
+.form-success p{color:var(--muted);font-size:16px;}
+.form-fields.hide{display:none;}
+
+@media (max-width:620px){
+  .form-row{grid-template-columns:1fr;}
+  .form-card{padding:30px 24px;}
+}

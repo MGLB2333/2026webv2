@@ -1,0 +1,71 @@
+/* ===== LightBoxTV — About / Team page ===== */
+/* Dark type-led hero, manifesto, stats strip, values, leadership, join CTA.
+   Nav inversion over the dark hero/stat-strip is handled by base.css (.on-dark);
+   SiteNav treats .ab-hero and .stat-strip as dark zones. */
+
+:root{ --wrap:1180px; }
+body{background:var(--paper);}
+
+/* hero — type-led, dark */
+.ab-hero{background:radial-gradient(120% 110% at 78% -10%, #241B3A 0%, #16151B 56%);color:#fff;padding:172px 0 110px;}
+.ab-hero .eyebrow{display:block;color:var(--blue);margin-bottom:24px;}
+.ab-hero h1{font-size:clamp(42px,6vw,88px);letter-spacing:-.035em;line-height:.98;max-width:17ch;text-transform:uppercase;font-weight:600;}
+.ab-hero h1 .ac{color:var(--blue);}
+.ab-hero .row{display:flex;gap:60px;flex-wrap:wrap;margin-top:42px;align-items:flex-end;}
+.ab-hero .row p{font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:var(--dmuted);max-width:46ch;}
+.ab-hero .cta-row{display:flex;gap:13px;flex-wrap:wrap;}
+
+/* manifesto — big statement */
+.manifesto{padding:104px 0;}
+.manifesto .grid{display:grid;grid-template-columns:.28fr .72fr;gap:48px;}
+.manifesto .lbl{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-deep);padding-top:12px;}
+.manifesto .body p{font-size:clamp(22px,2.4vw,32px);line-height:1.35;letter-spacing:-.01em;color:var(--ink);font-family:var(--disp);font-weight:500;}
+.manifesto .body p+p{margin-top:26px;}
+.manifesto .body .muted{color:var(--muted);}
+
+/* stats strip */
+.stat-strip{background:var(--ink);color:#fff;}
+.stat-strip .wrap{padding:64px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.stat-strip .s{text-align:center;}
+.stat-strip .s .n{font-family:var(--disp);font-weight:600;font-size:clamp(40px,4.4vw,60px);letter-spacing:-.03em;line-height:1;}
+.stat-strip .s .n .u{color:var(--blue);}
+.stat-strip .s .d{color:var(--dmuted);font-size:15px;margin-top:10px;}
+
+/* values */
+.values{padding:104px 0;}
+.values .head{max-width:60ch;margin-bottom:46px;}
+.values .head h2{font-size:clamp(30px,3.4vw,48px);letter-spacing:-.02em;margin-top:14px;}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.vcard{border-top:2px solid var(--ink);padding-top:24px;}
+.vcard .vn{font-family:var(--disp);font-weight:600;font-size:15px;color:var(--blue-deep);letter-spacing:.02em;}
+.vcard h3{font-family:var(--disp);font-weight:600;font-size:23px;letter-spacing:-.02em;margin:14px 0 12px;}
+.vcard p{color:var(--muted);font-size:16px;line-height:1.55;}
+
+/* leadership */
+.team{padding:0 0 104px;}
+.team .lbl{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:26px;}
+.team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.member{background:var(--tint);border-radius:20px;padding:32px 30px;display:flex;flex-direction:column;}
+.member .top{display:flex;gap:16px;align-items:center;margin-bottom:18px;}
+.member .av{width:62px;height:62px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:600;font-size:24px;color:#fff;}
+.member h3{font-family:var(--disp);font-weight:600;font-size:21px;letter-spacing:-.01em;}
+.member .role{color:var(--blue-deep);font-size:14px;font-weight:600;margin-top:3px;}
+.member p{color:var(--muted);font-size:15px;line-height:1.55;}
+.member .li{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:14px;font-weight:600;color:var(--ink);}
+.member .li svg{width:18px;height:18px;}
+.member .li:hover{color:var(--blue-deep);}
+
+/* join cta */
+.join{padding:0 0 104px;}
+.join-cta{background:var(--purple);border-radius:28px;padding:72px 56px;text-align:center;color:#fff;}
+.join-cta h2{font-size:clamp(30px,3.6vw,52px);letter-spacing:-.02em;margin-bottom:14px;}
+.join-cta p{font-size:18px;color:rgba(255,255,255,.9);max-width:48ch;margin:0 auto 28px;}
+.join-cta .btn.lite{background:#fff;color:var(--ink);}
+.join-cta .btn.lite:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(0,0,0,.28);}
+
+@media (max-width:880px){
+  .manifesto .grid{grid-template-columns:1fr;gap:24px;}
+  .stat-strip .wrap{grid-template-columns:1fr;gap:36px;}
+  .vgrid,.team-row{grid-template-columns:1fr;}
+  .ab-hero{padding:140px 0 80px;}
+}
