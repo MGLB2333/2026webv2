@@ -16,18 +16,20 @@ export default function FindYourFitPage() {
     <>
       <SiteNav />
 
-      <header className="fyf-hero">
-        <span className="eyebrow">Find your fit</span>
-        <h1>
-          Find your <span className="hl sm">LightBoxTV</span> fit.
-        </h1>
-        <p>
-          Six quick questions. See which workflows LightBoxTV can improve, which modules fit, and
-          the time you could save each week.
-        </p>
-      </header>
+      <div className="fyf-page">
+        <header className="fyf-hero">
+          <span className="eyebrow">Find your fit</span>
+          <h1>
+            Find your <span className="hl sm">LightBoxTV</span> fit.
+          </h1>
+          <p>
+            Six quick questions. See which workflows LightBoxTV can improve, which modules fit, and
+            the time you could save each week.
+          </p>
+        </header>
 
-      <FindYourFit />
+        <FindYourFit />
+      </div>
 
       <SiteFooter />
     </>
