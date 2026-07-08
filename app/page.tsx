@@ -26,11 +26,13 @@ export default function HomePage() {
             Plan, manage and measure every TV advertising campaign in one place. LightBoxTV brings
             fragmented workflows back together and gives every planner more time back.
           </p>
+          {/* Find your fit button hidden for now — restore when ready to promote the tool
           <div className="cta-row">
             <Link href="/find-your-fit" className="btn ghost">
               Find your fit <span className="ar">→</span>
             </Link>
           </div>
+          */}
         </div>
       </header>
 
