@@ -15,7 +15,7 @@ body{background:var(--paper);}
 .art-meta .av{width:48px;height:48px;border-radius:50%;background:var(--grad);flex:none;}
 .art-meta .who{font-size:15px;font-weight:600;}
 .art-meta .who span{display:block;font-weight:400;color:var(--muted);font-size:14px;}
-.art-cover{height:clamp(260px,40vw,460px);border-radius:24px;background:var(--grad);position:relative;overflow:hidden;}
+.art-cover{height:clamp(200px,26vw,340px);border-radius:24px;background:var(--grad);position:relative;overflow:hidden;}
 .art-cover.v2{background:linear-gradient(135deg,#7C3AED,#C2F042);}
 .art-cover.v3{background:linear-gradient(135deg,#7C3AED,#4C1D95);}
 .art-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
