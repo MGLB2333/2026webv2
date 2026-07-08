@@ -54,7 +54,7 @@ body{background:#fff;}
 }
 
 /* ===== SHARED POST CARDS (article "keep reading" / related) ===== */
-.more-wrap{background:var(--cream);border-top:1px solid var(--line);padding:80px 0;}
+.more-wrap{background:transparent;padding:60px 0 90px;}
 .more-wrap h3{font-family:var(--disp);font-weight:600;font-size:clamp(24px,2.4vw,32px);text-transform:uppercase;margin-bottom:34px;}
 .more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
 .pcard{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s, box-shadow .3s;}

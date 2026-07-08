@@ -6,7 +6,6 @@ import remarkGfm from "remark-gfm";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollReveal from "@/components/ScrollReveal";
-import PostCard from "@/components/PostCard";
 import { mdxComponents } from "@/components/mdx-components";
 import { getPost, getPostSlugs, getRelatedPosts } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
@@ -14,6 +13,12 @@ import "@/styles/article.css";
 import "@/styles/blog.css";
 
 export const dynamicParams = false;
+
+const KEEP_GRADS = [
+  "linear-gradient(150deg,#7C3AED,#16151B)",
+  "linear-gradient(150deg,#F4502A,#16151B)",
+  "linear-gradient(150deg,#C2F042,#3A7A0E)",
+];
 
 export function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }));
@@ -68,7 +73,6 @@ export default async function ArticlePage({
   });
 
   const related = getRelatedPosts(slug);
-  const coverClass = ["art-cover", post.cover].filter(Boolean).join(" ");
   const subject = encodeURIComponent(post.title);
   const shareUrl = encodeURIComponent(`${siteConfig.url}/blog/${slug}`);
 
@@ -89,9 +93,6 @@ export default async function ArticlePage({
             <div className="av"></div>
             <div className="who">{post.author ?? `${siteConfig.name} Team`}<span>Published {post.formattedDate}</span></div>
           </div>
-          <div className={coverClass}>
-            {post.image && <img src={post.image} alt={post.title} />}
-          </div>
         </div>
       </header>
 
@@ -111,10 +112,20 @@ export default async function ArticlePage({
       {related.length > 0 && (
         <section className="more-wrap">
           <div className="wrap">
-            <h3>Keep reading</h3>
-            <div className="more-grid">
-              {related.map((p) => (
-                <PostCard key={p.slug} post={p} />
+            <h3 className="reveal">Keep reading</h3>
+            <div className="more-grid" data-reveal-group>
+              {related.map((p, i) => (
+                <Link key={p.slug} href={`/blog/${p.slug}`} className="pcard">
+                  <div className="ph" style={{ background: KEEP_GRADS[i % KEEP_GRADS.length] }}>
+                    <span className="cat">{p.category}</span>
+                  </div>
+                  <div className="pb">
+                    <span className="meta">{p.readingTime}</span>
+                    <h3>{p.title}</h3>
+                    <p>{p.description}</p>
+                    <span className="more">Read more →</span>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
