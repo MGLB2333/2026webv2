@@ -27,17 +27,34 @@ export default function SiteNav({
   light = false,
 }: SiteNavProps) {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    let prevY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 12);
+      // Hide when scrolling down (past the hero-ish threshold); reveal on scroll up.
+      const delta = y - prevY;
+      if (Math.abs(delta) > 6) {
+        setHidden(delta > 0 && y > 140);
+        prevY = y;
+      }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const close = () => setMenuOpen(false);
-  const navClass = ["", scrolled ? "scrolled" : "", light ? "light" : "", menuOpen ? "menu-open" : ""]
+  const navClass = [
+    "",
+    scrolled ? "scrolled" : "",
+    light ? "light" : "",
+    hidden && !menuOpen ? "nav-hidden" : "",
+    menuOpen ? "menu-open" : "",
+  ]
     .filter(Boolean)
     .join(" ");
 

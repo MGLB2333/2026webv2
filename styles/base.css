@@ -93,7 +93,9 @@ h1,h2,h3,h4{font-family:var(--disp);font-weight:600;letter-spacing:-.025em;line-
 html.no-newsbar{--newsbar-h:0px;}
 
 /* ===== NAV — always dark translucent (2.0) ===== */
-nav{position:fixed;top:var(--newsbar-h);left:0;right:0;z-index:80;background:rgba(22,21,27,.72);backdrop-filter:saturate(140%) blur(16px);-webkit-backdrop-filter:saturate(140%) blur(16px);border-bottom:1px solid transparent;transition:background .3s, border-color .3s, top .3s;}
+nav{position:fixed;top:var(--newsbar-h);left:0;right:0;z-index:80;background:rgba(22,21,27,.72);backdrop-filter:saturate(140%) blur(16px);-webkit-backdrop-filter:saturate(140%) blur(16px);border-bottom:1px solid transparent;transition:background .3s, border-color .3s, top .3s, transform .35s cubic-bezier(.22,.61,.36,1);}
+/* smart nav: slide up out of view on scroll-down, back in on scroll-up */
+nav.nav-hidden{transform:translateY(calc(-100% - var(--newsbar-h)));}
 .nav-in{max-width:1360px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
 nav.scrolled{background:rgba(22,21,27,.92);border-bottom-color:rgba(255,255,255,.08);}
 .nav-logo{height:26px;}
