@@ -196,7 +196,7 @@ export default function HomePage() {
         </section>
 
         {/* ===== BIG CTA (orange) ===== */}
-        <section className="panel or" id="demo">
+        <section className="panel pp" id="demo">
           <div className="wrap pad-sm">
             <div className="bigcta reveal">
               <Link href="/contact?reason=demo"><h3>Book<br />a demo</h3><span className="arc">↗</span></Link>
